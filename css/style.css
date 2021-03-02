@@ -21,43 +21,98 @@ header{
     padding-right: 1vw;
 }
 
-nav{
-    padding: 1vh;
-    color: white;
-    size: 30em;
-    height: 100vh;
-    width: 80vw;
-    background: rgb(39, 0, 0);
-    position: fixed;
-    top: 0;
-    left: -90vw;
-    transition: left 0.3s;
-    box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
-    z-index: 10;
-}
-.show{
-    left: 0;
-}
-.fade-layer{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 5;
-}
-
-.fade-layer.visible{
-    display: block;
-}
-
 main{
     grid-area: ma;
+    display: flex;
+    justify-content: space-evenly;
+    padding: .5vh;
 }
+
+.section1{
+    align-self: center;
+    padding: 1em;
+    box-shadow: black 0 0 0 1.5px;
+}
+.section2{
+    align-self: center;
+    padding: 1em;
+    box-shadow: black 0 0 0 1.5px;
+}
+.section3{
+    align-self: center;
+    padding: 1em;
+    box-shadow: black 0 0 0 1.5px;
+}
+
 
 footer{
     grid-area: fo;
+    color:white;
+    background-color: black;
+}
 
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+    nav{
+        padding: 1vh;
+        color: white;
+        size: 30em;
+        height: 100vh;
+        width: 80vw;
+        background: rgb(39, 0, 0);
+        position: fixed;
+        top: 0;
+        left: -90vw;
+        transition: left 0.3s;
+        box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+        z-index: 10;
+    }
+    
+    .show{
+        left: 0;
+    }
+    .fade-layer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 5;
+    }
+
+    .fade-layer.visible{
+        display: block;
+    }
+    
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+
+    .nav-button{
+        display: none;
+    
+    }
+
+    body.container{
+        grid-template-rows: 1fr 0.5fr 4fr 1fr;
+    
+        grid-template-areas: 
+        
+        'he'
+        'na'
+        'ma'
+        'fo'
+        ;
+    }    
+    nav{
+        grid-area: na;
+        color: white;
+        background-color: rgb(83, 0, 0);
+        display: flex;
+
+    }
 }
